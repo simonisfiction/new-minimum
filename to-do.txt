@@ -1,0 +1,18 @@
+Breaking the new minimum project down into its smallest components:
+
+features:
+support for user signups
+  * user authentication
+  * storing user data in a database
+  * encrypt user data
+
+the app must have a database to store user data
+  * decide on a database technology
+  * instanciate the database
+
+desired features:
+  to-do list
+  reminder system (for car registration, birthdays, events)
+  a person map to not forget names and help out when going to family/work functions
+  a basic guide to all of the things that are overlooked in the transition to living by yourself
+  
