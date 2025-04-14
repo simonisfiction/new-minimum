@@ -1,3 +1,9 @@
 p{
   color: red;
 }
+body{
+  background-color: rgb(111, 83, 204);
+}
+.navbar{
+  background-color: rgb(79, 50, 176);
+}
