@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Finance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
   </head>
   <body>
@@ -11,13 +16,35 @@
       </ul>
     </nav>
     <div>
-      <form>
-        <label for="income">income</label>
-        <input type="text" id="income" name="income">
-        <label for="rent">rent total</label>
-        <input type="text" id="rent" name="rent">
-        
-      </form>
+      <h1>Personal Finance Calculator</h1>
+      <p>
+        Personal finance is very simple, but day to day we face a culture that takes advantage of our psychology in order to get us to save less, invest less, and spend more. In the fourth quarter of 2024, the average credit card balance in the united states was $6,580. 
+      </p>
+      <br>
+      <p>
+        One of the keys to avoiding getting into debt is to automate the process of saving money. This calculator will take into account your income and expenses and figure out how much money you have left over to save. To get the ball rolling on saving effectively, set up an automatic transfer from your checking account to a savings account for the amount displayed. The automation of the process of saving takes some friction out of the equation. Typically, people manually transfer money into their savings accounts. It is much easier to set up your savings plan, and then leave it be. 
+      </p>
     </div>
+    
+
+    <div>
+      <form name="my-form">
+        <div>
+          <label for="income">income</label>
+          <input type="text" id="income" name="income">
+        </div>
+        <div>
+          <label for="rent">rent total</label>
+          <input type="text" id="rent" name="rent"> 
+        </div>
+
+
+        <button type="submit" name="submit">Submit</button>
+      </form>
+      <div class="out">
+          <p>Money left over: </p>
+      </div>
+    </div>
+    <script src="index.js" charset="utf-8"></script>
   </body>
 </html>
