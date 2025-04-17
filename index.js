@@ -1,6 +1,22 @@
+//*****      CLASSES     ****************/
+
+class User {
+  constructor(email, password){
+    this.email = email;
+    this.password = password;
+  }
+  greet() {
+    console.log("Hi, i exist now, and my email is: ${this.email}");
+  }
+}
+
+
+
+//*****     PAGE FUNCTCIONALITY **************/
+
 let form = document.forms["my-form"];
 form.addEventListener("submit", getValues);
-console.log("\n this is the beginning of the js file");
+
 function getValues(event){
   event.preventDefault();
 
@@ -14,3 +30,9 @@ function getValues(event){
 
   document.querySelector(".out").innerHTML = out;
 }
+
+let signupForm = document.forms["signup-form"];
+signupForm.addEventListener("submit", getValues);
+let newUser = new User()
+
+
