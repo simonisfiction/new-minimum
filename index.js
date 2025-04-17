@@ -1,21 +1,27 @@
-//*****      CLASSES     ****************/
+//************************************************************************/
+//     CLASSES 
+//************************************************************************/
 
 class User {
   constructor(email, password){
-    this.email = email;
-    this.password = password;
+    this.email = email.value;
+    this.password = password.value;
   }
   greet() {
-    console.log("Hi, i exist now, and my email is: ${this.email}");
+    console.log(`Hi, i exist now, and my email is: ${this.email}`);
   }
 }
 
 
+//************************************************************************/
+//     PAGE FUNCTCIONALITY
+//************************************************************************/
 
-//*****     PAGE FUNCTCIONALITY **************/
-
+// Finance form
 let form = document.forms["my-form"];
-form.addEventListener("submit", getValues);
+if(form){
+  form.addEventListener("submit", getValues);
+}
 
 function getValues(event){
   event.preventDefault();
@@ -31,8 +37,20 @@ function getValues(event){
   document.querySelector(".out").innerHTML = out;
 }
 
+
+// signup form
 let signupForm = document.forms["signup-form"];
-signupForm.addEventListener("submit", getValues);
-let newUser = new User()
+if(signupForm){
+  signupForm.addEventListener("submit", handleSignup);
+}
+
+function handleSignup(event){
+  event.preventDefault();
+
+  let newUser = new User(signupForm.email, signupForm.password)
+  newUser.greet();
+
+}
+
 
 
