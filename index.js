@@ -11,7 +11,7 @@ class FinanceSheet {
   }
   printFinanceSheet(){
     console.log(`\nFinances\n`);
-    console.log(`--------------------------\n`);
+    console.log(`------------------------------\n`);
     console.log(`| Income             | ${this.income} \n`);
     console.log(`| Rent               | ${this.rent}\n`);
     console.log(`| Grocery Budget     | ${this.groceryBudget}\n`);
