@@ -1,6 +1,30 @@
 //************************************************************************/
 //     CLASSES 
 //************************************************************************/
+class FinanceSheet {
+  constructor(income, rent, groceryBudget){
+    this.income = income;
+    this.rent = rent;
+    this.groceryBudget = groceryBudget;
+    this.monthlyProfit = 0;
+    this.calculateMonthlyProfit();
+  }
+  printFinanceSheet(){
+    console.log(`\nFinances\n`);
+    console.log(`--------------------------\n`);
+    console.log(`| Income             | ${this.income} \n`);
+    console.log(`| Rent               | ${this.rent}\n`);
+    console.log(`| Grocery Budget     | ${this.groceryBudget}\n`);
+    console.log(`| Monthly profit:    | ${this.monthlyProfit}\n`);
+
+  }
+  calculateMonthlyProfit(){
+    this.monthlyProfit = parseFloat(this.income) - parseFloat(this.rent) - parseFloat(this.groceryBudget);
+    
+    let out = `<p>Money left over: ${this.monthlyProfit.toFixed(2)}</p>`;
+    document.querySelector(".out").innerHTML = out;
+  }
+}
 
 class User {
   constructor(email, password){
@@ -11,6 +35,8 @@ class User {
     console.log(`Hi, i exist now, and my email is: ${this.email}`);
   }
 }
+
+
 
 
 //************************************************************************/
@@ -25,16 +51,9 @@ if(form){
 
 function getValues(event){
   event.preventDefault();
-
-  let formData = {
-    "income": form.income.value,
-    "rent": form.rent.value
-  }
-  let profit = parseFloat(formData.income) - parseFloat(formData.rent);
-  console.log(profit);
-  let out = `<p>Money left over: ${profit.toFixed(2)}</p>`;
-
-  document.querySelector(".out").innerHTML = out;
+  let newFinanceSheet = new FinanceSheet(form.income.value, form.rent.value, form.groceryBudget.value)
+  newFinanceSheet.calculateMonthlyProfit();
+  newFinanceSheet.printFinanceSheet();
 }
 
 
