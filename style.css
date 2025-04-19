@@ -1,5 +1,6 @@
 body{
   background-color: rgb(111, 83, 204);
+  
 }
 nav{
   background-color: rgb(79, 50, 176);
@@ -15,4 +16,17 @@ a:visited{
 }
 a:hover{
   color:rgb(215, 170, 116);
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  font-family: sans-serif;
+}
+.form-group{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap : 0.5rem 1rem;
+  align-items: center;
+  margin: 0.5rem 0;
 }
