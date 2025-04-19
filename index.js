@@ -137,7 +137,7 @@ class FinanceSheet {
     console.log(`| Property tax                 | ${this.propertyTax}\n`);
     console.log(`| Rent                         | ${this.rent}\n`);
     console.log(`| Rental or home insurance     | ${this.rentalHomeInsurance}\n`);
-    console.log(`| HOA or Co-op| ${this.hoaCoOp}\n`);
+    console.log(`| HOA or Co-op                 | ${this.hoaCoOp}\n`);
     console.log(`| Home maintenance             | ${this.homeMaintenance}\n`);
     console.log(`| Utilities                    | ${this.utilities}\n`);
     // transportation
