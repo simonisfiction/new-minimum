@@ -2,6 +2,12 @@ body{
   background-color: rgb(111, 83, 204);
   
 }
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
 nav{
   background-color: rgb(79, 50, 176);
   color:aliceblue;
