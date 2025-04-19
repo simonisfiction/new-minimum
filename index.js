@@ -214,7 +214,61 @@ if(form){
 
 function getValues(event){
   event.preventDefault();
-  let newFinanceSheet = new FinanceSheet(form.income.value, form.rent.value, form.groceryBudget.value)
+  let newFinanceSheet = new FinanceSheet(
+    form.income.value, 
+    form.pensionAndSocialSecurity.value,
+    form.investmentsAndSavings.value, 
+    form.otherIncome.value,
+    //***************************** */
+    // expense related parameters
+    // Housing and utilities
+    form.mortgage.value,
+    form.propertyTax.value,
+    form.rent.value,
+    form.rentalHomeInsurance.value,
+    form.hoaCoOp.value,
+    form.homeMaintenance.value,
+    form.utilities.value,
+    // transportation
+    form.autoLoan.value,
+    form.autoInsurance.value,
+    form.gasoline.value,
+    form.autoMaintenance.value,
+    form.parkingAndTolls.value,
+    form.otherTransportCosts.value,
+    // Other Debt & Loan Payments
+    form.creditCard.value,
+    form.studentLoan.value,
+    form.otherLoansAndLiabilities.value,
+    // <h2>Living Expenses</h2>
+    form.groceryBudget.value,
+    form.clothing.value,
+    form.houseSupplies.value,
+    form.mealsOut.value,
+    form.otherLivingExpenses.value,
+    // <h2>Healthcare</h2>
+    form.medicalInsurance.value,
+    form.medicalSpending.value,
+    // <h2>Children & Education</h2>
+    form.childAndPersonalCare.value,
+    form.tuitionAndSupplies.value,
+    form.childSupport.value,
+    form.otherChildSpending.value,
+    // <h2>Savings & Investments</h2>
+    form._401k.value,
+    form.ira.value,
+    form.rothIra.value,
+    form.collegeSaving.value,
+    form.carSaving.value,
+    form.emergencyFund.value,
+    // <h2>Miscelaneous Expenses</h2>
+    form.pet.value,
+    form.gifts.value,
+    form.hobbies.value,
+    form.entertainmentAndTickets.value,
+    form.travelAndVacation.value,
+    form.otherMiscExpenses.value
+  )
   newFinanceSheet.calculateMonthlyProfit();
   newFinanceSheet.printFinanceSheet();
 }
