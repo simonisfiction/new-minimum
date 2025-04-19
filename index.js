@@ -2,7 +2,7 @@
 //     CLASSES 
 //************************************************************************/
 class FinanceSheet {
-  constructor(filler,
+  constructor(
     //income related parameters
     income, 
     pensionAndSocialSecurity,
@@ -118,12 +118,67 @@ class FinanceSheet {
     this.calculateMonthlyProfit();
   }
   printFinanceSheet(){
-    console.log(`\nFinances\n`);
+    console.log(`\nFINANCES\n`);
     console.log(`------------------------------\n`);
-    console.log(`| Income             | ${this.income} \n`);
-    console.log(`| Rent               | ${this.rent}\n`);
-    console.log(`| Grocery Budget     | ${this.groceryBudget}\n`);
-    console.log(`| Monthly profit:    | ${this.monthlyProfit}\n`);
+    console.log(`| INCOME SOURCES     `);
+    console.log(`------------------------------\n`);
+    //income related parameters
+    console.log(`| income                       | ${this.income}\n`);
+    console.log(`| Pension & social security    | ${this.pensionAndSocialSecurity}\n`);
+    console.log(`| Investments & savings        | ${this.investmentsAndSavings}\n`);
+    console.log(`| Other income                 | ${this.otherIncome}\n`);
+    //***************************** */
+    // expense related parameters
+    console.log(`------------------------------\n`);
+    console.log(`| EXPENSES      `);
+    console.log(`------------------------------\n`);
+    // Housing and utilities
+    console.log(`| Mortgage                     | ${this.mortgage}\n`);
+    console.log(`| Property tax                 | ${this.propertyTax}\n`);
+    console.log(`| Rent                         | ${this.rent}\n`);
+    console.log(`| Rental or home insurance     | ${this.rentalHomeInsurance}\n`);
+    console.log(`| HOA or Co-op| ${this.hoaCoOp}\n`);
+    console.log(`| Home maintenance             | ${this.homeMaintenance}\n`);
+    console.log(`| Utilities                    | ${this.utilities}\n`);
+    // transportation
+    console.log(`| Auto loan                    | ${this.autoLoan}\n`);
+    console.log(`| Auto insurance               | ${this.autoInsurance}\n`);
+    console.log(`| Gasoline                     | ${this.gasoline}\n`);
+    console.log(`| Auto maintenance             | ${this.autoMaintenance}\n`);
+    console.log(`| Parking and tolls            | ${this.parkingAndTolls}\n`);
+    console.log(`| Other transport costs        | ${this.otherTransportCosts}\n`);
+    // Other Debt & Loan Payments
+    console.log(`| Credit card                  | ${this.creditCard}\n`);
+    console.log(`| Student loan                 | ${this.studentLoan}\n`);
+    console.log(`| Other loans & liabilities    | ${this.otherLoansAndLiabilities}\n`);
+    // <h2>Living Expenses</h2>
+    console.log(`| Grocery budget               | ${this.groceryBudget}\n`);
+    console.log(`| Clothing                     | ${this.clothing}\n`);
+    console.log(`| House supplies               | ${this.houseSupplies}\n`);
+    console.log(`| Meals out                    | ${this.mealsOut}\n`);
+    console.log(`| Other living expenses        | ${this.otherLivingExpenses}\n`);
+    // <h2>Healthcare</h2>
+    console.log(`| Medical insurance            | ${this.medicalInsurance}\n`);
+    console.log(`| Medical spending             | ${this.medicalSpending}\n`);
+    // <h2>Children & Education</h2>
+    console.log(`| Child & personal care        | ${this.childAndPersonalCare}\n`);
+    console.log(`| Tuition & supplies           | ${this.tuitionAndSupplies}\n`);
+    console.log(`| Child support                | ${this.childSupport}\n`);
+    console.log(`| Other child spending         | ${this.otherChildSpending}\n`);
+    // <h2>Savings & Investments</h2>
+    console.log(`| 401k                         | ${this._401k}\n`);
+    console.log(`| IRA                          | ${this.ira}\n`);
+    console.log(`| Roth IRA                     | ${this.rothIra}\n`);
+    console.log(`| College saving               | ${this.collegeSaving}\n`);
+    console.log(`| Car saving                   | ${this.carSaving}\n`);
+    console.log(`| Emergency fund               | ${this.emergencyFund}\n`);
+    // <h2>Miscelaneous Expenses</h2>
+    console.log(`| Pet                          | ${this.pet}\n`);
+    console.log(`| Gifts                        | ${this.gifts}\n`);
+    console.log(`| Hobbies                      | ${this.hobbies}\n`);
+    console.log(`| Entertainment & tickets      | ${this.entertainmentAndTickets}\n`);
+    console.log(`| Travel & vacations           | ${this.travelAndVacation}\n`);
+    console.log(`| Other miscelaneous expenses  | ${this.otherMiscExpenses}\n`);
 
   }
   calculateMonthlyProfit(){
