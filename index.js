@@ -207,67 +207,67 @@ class User {
 //************************************************************************/
 
 // Finance form
-let form = document.forms["my-form"];
-if(form){
-  form.addEventListener("submit", getValues);
+let financeForm = document.forms["my-form"];
+if(financeForm){
+  financeForm.addEventListener("submit", getFinanceValues);
 }
 
-function getValues(event){
+function getFinanceValues(event){
   event.preventDefault();
   let newFinanceSheet = new FinanceSheet(
-    form.income.value, 
-    form.pensionAndSocialSecurity.value,
-    form.investmentsAndSavings.value, 
-    form.otherIncome.value,
+    financeForm.income.value, 
+    financeForm.pensionAndSocialSecurity.value,
+    financeForm.investmentsAndSavings.value, 
+    financeForm.otherIncome.value,
     //***************************** */
     // expense related parameters
     // Housing and utilities
-    form.mortgage.value,
-    form.propertyTax.value,
-    form.rent.value,
-    form.rentalHomeInsurance.value,
-    form.hoaCoOp.value,
-    form.homeMaintenance.value,
-    form.utilities.value,
+    financeForm.mortgage.value,
+    financeForm.propertyTax.value,
+    financeForm.rent.value,
+    financeForm.rentalHomeInsurance.value,
+    financeForm.hoaCoOp.value,
+    financeForm.homeMaintenance.value,
+    financeForm.utilities.value,
     // transportation
-    form.autoLoan.value,
-    form.autoInsurance.value,
-    form.gasoline.value,
-    form.autoMaintenance.value,
-    form.parkingAndTolls.value,
-    form.otherTransportCosts.value,
+    financeForm.autoLoan.value,
+    financeForm.autoInsurance.value,
+    financeForm.gasoline.value,
+    financeForm.autoMaintenance.value,
+    financeForm.parkingAndTolls.value,
+    financeForm.otherTransportCosts.value,
     // Other Debt & Loan Payments
-    form.creditCard.value,
-    form.studentLoan.value,
-    form.otherLoansAndLiabilities.value,
+    financeForm.creditCard.value,
+    financeForm.studentLoan.value,
+    financeForm.otherLoansAndLiabilities.value,
     // <h2>Living Expenses</h2>
-    form.groceryBudget.value,
-    form.clothing.value,
-    form.houseSupplies.value,
-    form.mealsOut.value,
-    form.otherLivingExpenses.value,
+    financeForm.groceryBudget.value,
+    financeForm.clothing.value,
+    financeForm.houseSupplies.value,
+    financeForm.mealsOut.value,
+    financeForm.otherLivingExpenses.value,
     // <h2>Healthcare</h2>
-    form.medicalInsurance.value,
-    form.medicalSpending.value,
+    financeForm.medicalInsurance.value,
+    financeForm.medicalSpending.value,
     // <h2>Children & Education</h2>
-    form.childAndPersonalCare.value,
-    form.tuitionAndSupplies.value,
-    form.childSupport.value,
-    form.otherChildSpending.value,
+    financeForm.childAndPersonalCare.value,
+    financeForm.tuitionAndSupplies.value,
+    financeForm.childSupport.value,
+    financeForm.otherChildSpending.value,
     // <h2>Savings & Investments</h2>
-    form._401k.value,
-    form.ira.value,
-    form.rothIra.value,
-    form.collegeSaving.value,
-    form.carSaving.value,
-    form.emergencyFund.value,
+    financeForm._401k.value,
+    financeForm.ira.value,
+    financeForm.rothIra.value,
+    financeForm.collegeSaving.value,
+    financeForm.carSaving.value,
+    financeForm.emergencyFund.value,
     // <h2>Miscelaneous Expenses</h2>
-    form.pet.value,
-    form.gifts.value,
-    form.hobbies.value,
-    form.entertainmentAndTickets.value,
-    form.travelAndVacation.value,
-    form.otherMiscExpenses.value
+    financeForm.pet.value,
+    financeForm.gifts.value,
+    financeForm.hobbies.value,
+    financeForm.entertainmentAndTickets.value,
+    financeForm.travelAndVacation.value,
+    financeForm.otherMiscExpenses.value
   )
   newFinanceSheet.calculateMonthlyProfit();
   newFinanceSheet.printFinanceSheet();
