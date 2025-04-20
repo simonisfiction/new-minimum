@@ -5,6 +5,9 @@ body{
 h1 {
   text-align: center;
 }
+h2{
+  text-align: ;
+}
 p {
   text-align: center;
 }
@@ -25,14 +28,14 @@ a:hover{
 }
 
 form {
-  max-width: 600px;
+  max-width: 900px;
   margin: auto;
   font-family: sans-serif;
 }
 .form-group{
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap : 0.5rem 1rem;
+  gap : 10px;
   align-items: center;
-  margin: 0.5rem 0;
+  margin: 10px;
 }
