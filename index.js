@@ -56,7 +56,30 @@ class FinanceSheet {
     hobbies,
     entertainmentAndTickets,
     travelAndVacation,
-    otherMiscExpenses
+    otherMiscExpenses,
+    // summary
+    totalBeforeTaxIncome,
+    totalAfterTaxIncome,
+    totalExpenses,
+    newDiscretionaryIncome,
+    newSavingsAndInvestments,
+
+    // daily savings transfers
+    rentAndUtilitiesTransfer,
+    carInsuranceAndRepairsTransfer,
+    carAndSchoolSavingsTransfer,
+    iraTransfer,
+    emergencyFundTransfer,
+    christmasAndBirthdayGiftsTransfer,
+    // expense totals
+    housingAndUtilities,
+    transportation,
+    livingExpenses,
+    debtAndLoanRepayments,
+    healthcare,
+    childrenAndEducation,
+    savingsAndInvestments,
+    miscellaneousExpenses
 
     ){
     // income related data members
@@ -112,6 +135,28 @@ class FinanceSheet {
     this.travelAndVacation = travelAndVacation;
     this.otherMiscExpenses = otherMiscExpenses;
 
+    this.totalBeforeTaxIncome = totalBeforeTaxIncome;
+    this.totalAfterTaxIncometotalAfterTaxIncome = totalAfterTaxIncome;
+    this.totalExpenses = totalExpenses;
+    this.netDiscretionaryIncome = netDiscretionaryIncome;
+    this.netSavingsAndInvestments = netSavingsAndInvestments;
+
+    // daily savings transfers
+    this.rentAndUtilitiesTransfer = rentAndUtilitiesTransfer;
+    this.carInsuranceAndRepairsTransfer = carInsuranceAndRepairsTransfer;
+    this.carAndSchoolSavingsTransfer = carAndSchoolSavingsTransfer;
+    this.iraTransfer = iraTransfer;
+    this.emergencyFundTransfer = emergencyFundTransfer;
+    this.christmasAndBirthdayGiftsTransfer = christmasAndBirthdayGiftsTransfer;
+    // expense totals
+    this.housingAndUtilities = housingAndUtilities;
+    this.transportation = transportation;
+    this.livingExpenses = livingExpenses;
+    this.debtAndLoanRepayments = debtAndLoanRepayments;
+    this.healthcare = healthcare;
+    this.childrenAndEducation = childrenAndEducation;
+    this.savingsAndInvestments = savingsAndInvestments;
+    this.miscellaneousExpenses = miscellaneousExpenses; 
 
 
     this.monthlyProfit = 0;
@@ -179,7 +224,38 @@ class FinanceSheet {
     console.log(`| Entertainment & tickets      | ${this.entertainmentAndTickets}\n`);
     console.log(`| Travel & vacations           | ${this.travelAndVacation}\n`);
     console.log(`| Other miscelaneous expenses  | ${this.otherMiscExpenses}\n`);
+    // summary
+    console.log(`------------------------------\n`);
+    console.log(`| SUMMARY`);
+    console.log(`------------------------------\n`);
+    console.log(`| Before tax income            | ${this.totalBeforeTaxIncome}\n`);
+    console.log(`| After tax income             | ${this.totalAfterTaxIncome}\n`);
+    console.log(`| Total Expenses               | ${this.totalExpenses}\n`);
+    console.log(`| Net discretionary income     | ${this.netDiscretionaryIncome}\n`);
+    console.log(`| Net savings & inversments    | ${this.netSavingsAndInvestments}\n`);
 
+    // daily savings transfers
+    console.log(`------------------------------\n`);
+    console.log(`| DAILY SAVINGS TRANSFERS`);
+    console.log(`------------------------------\n`);
+    console.log(`| rent and utilities           | ${this.rentAndUtilitiesTransfer}\n`);
+    console.log(`| car insurance                | ${this.carInsuranceAndRepairsTransfer}\n`);
+    console.log(`| car & school savings         | ${this.carAndSchoolSavingsTransfer}\n`);
+    console.log(`| ira transfer                 | ${this.iraTransfer}\n`);
+    console.log(`| emergengy fund               | ${this.emergencyFundTransfer}\n`);
+    console.log(`| christmas and birthday gifts | ${this.christmasAndBirthdayGiftsTransfer}\n`);
+    // expense totals
+    console.log(`------------------------------\n`);
+    console.log(`| EXPENSE TOTALS`);
+    console.log(`------------------------------\n`);
+    console.log(`| Housing & utilities          | ${this.housingAndUtilities}\n`);
+    console.log(`| transportation               | ${this.transportation}\n`);
+    console.log(`| living expenses              | ${this.livingExpenses}\n`);
+    console.log(`| debt and loan repayment      | ${this.debtAndLoanRepayments}\n`);
+    console.log(`| healthcare                   | ${this.healthcare}\n`);
+    console.log(`| children and education       | ${this.childrenAndEducation}\n`);
+    console.log(`| savings and investments      | ${this.savingsAndInvestments}\n`);
+    console.log(`| miscellaneous expenses       | ${this.miscellaneousExpenses}\n`);
   }
   calculateMonthlyProfit(){
     this.monthlyProfit = parseFloat(this.income) - parseFloat(this.rent) - parseFloat(this.groceryBudget);
@@ -267,7 +343,11 @@ function getFinanceValues(event){
     financeForm.hobbies.value,
     financeForm.entertainmentAndTickets.value,
     financeForm.travelAndVacation.value,
-    financeForm.otherMiscExpenses.value
+    financeForm.otherMiscExpenses.value,
+    0,0,0,0,0,
+    0,0,0,0,0,
+    0,0,0,0,0,
+    0,0,0,0
   )
   newFinanceSheet.calculateMonthlyProfit();
   newFinanceSheet.printFinanceSheet();
