@@ -8,6 +8,7 @@ class FinanceSheet {
     pensionAndSocialSecurity,
     investmentsAndSavings, 
     otherIncome,
+    incomeTaxRate,
     //***************************** */
     // expense related parameters
     // Housing and utilities
@@ -61,8 +62,8 @@ class FinanceSheet {
     totalBeforeTaxIncome,
     totalAfterTaxIncome,
     totalExpenses,
-    newDiscretionaryIncome,
-    newSavingsAndInvestments,
+    netDiscretionaryIncome,
+    netSavingsAndInvestments,
 
     // daily savings transfers
     rentAndUtilitiesTransfer,
@@ -87,6 +88,7 @@ class FinanceSheet {
     this.pensionAndSocialSecurity = pensionAndSocialSecurity;
     this.investmentsAndSavings = investmentsAndSavings;
     this.otherIncome = otherIncome;
+    this.incomeTaxRate = incomeTaxRate;
     // expense related data members
     this.mortgage = mortgage;
     this.propertyTax = propertyTax;
@@ -134,9 +136,9 @@ class FinanceSheet {
     this.entertainmentAndTickets = entertainmentAndTickets;
     this.travelAndVacation = travelAndVacation;
     this.otherMiscExpenses = otherMiscExpenses;
-
+    // summary
     this.totalBeforeTaxIncome = totalBeforeTaxIncome;
-    this.totalAfterTaxIncometotalAfterTaxIncome = totalAfterTaxIncome;
+    this.totalAfterTaxIncome = totalAfterTaxIncome;
     this.totalExpenses = totalExpenses;
     this.netDiscretionaryIncome = netDiscretionaryIncome;
     this.netSavingsAndInvestments = netSavingsAndInvestments;
@@ -158,10 +160,32 @@ class FinanceSheet {
     this.savingsAndInvestments = savingsAndInvestments;
     this.miscellaneousExpenses = miscellaneousExpenses; 
 
-
+    this.calculateSummaryValues();
     this.monthlyProfit = 0;
     this.calculateMonthlyProfit();
   }
+
+  calculateSummaryValues(){
+    this.totalBeforeTaxIncome = this.income 
+                              + this.pensionAndSocialSecurity 
+                              + this.investmentsAndSavings
+                              + this.otherIncome;
+    this.totalAfterTaxIncome = this.totalBeforeTaxIncome * (1 - .01 * this.incomeTaxRate);
+    this.totalExpenses = this.housingAndUtilities
+                       + this.transportation
+                       + this.livingExpenses
+                       + this.debtAndLoanRepayments
+                       + this.healthcare
+                       + this.childrenAndEducation
+                       + this.savingsAndInvestments
+                       + this.miscellaneousExpenses;
+    this.netDiscretionaryIncome = this.totalAfterTaxIncome - this.totalExpenses;
+    this.netSavingsAndInvestments = this.collegeSaving 
+                                  + this.carSaving * 12
+                                  + this.rothIra * 12
+                                  + this.emergencyFund * 12
+  }
+
   printFinanceSheet(){
     console.log(`\nFINANCES\n`);
     console.log(`------------------------------\n`);
@@ -172,6 +196,7 @@ class FinanceSheet {
     console.log(`| Pension & social security    | ${this.pensionAndSocialSecurity}\n`);
     console.log(`| Investments & savings        | ${this.investmentsAndSavings}\n`);
     console.log(`| Other income                 | ${this.otherIncome}\n`);
+    console.log(`| Income tax rate              | %${this.incomeTaxRate}\n`);
     //***************************** */
     // expense related parameters
     console.log(`------------------------------\n`);
@@ -291,59 +316,60 @@ if(financeForm){
 function getFinanceValues(event){
   event.preventDefault();
   let newFinanceSheet = new FinanceSheet(
-    financeForm.income.value, 
-    financeForm.pensionAndSocialSecurity.value,
-    financeForm.investmentsAndSavings.value, 
-    financeForm.otherIncome.value,
+    parseFloat(financeForm.income.value), 
+    parseFloat(financeForm.pensionAndSocialSecurity.value),
+    parseFloat(financeForm.investmentsAndSavings.value), 
+    parseFloat(financeForm.otherIncome.value),
+    parseFloat(financeForm.incomeTaxRate.value),
     //***************************** */
     // expense related parameters
     // Housing and utilities
-    financeForm.mortgage.value,
-    financeForm.propertyTax.value,
-    financeForm.rent.value,
-    financeForm.rentalHomeInsurance.value,
-    financeForm.hoaCoOp.value,
-    financeForm.homeMaintenance.value,
-    financeForm.utilities.value,
+    parseFloat(financeForm.mortgage.value),
+    parseFloat(financeForm.propertyTax.value),
+    parseFloat(financeForm.rent.value),
+    parseFloat(financeForm.rentalHomeInsurance.value),
+    parseFloat(financeForm.hoaCoOp.value),
+    parseFloat(financeForm.homeMaintenance.value),
+    parseFloat(financeForm.utilities.value),
     // transportation
-    financeForm.autoLoan.value,
-    financeForm.autoInsurance.value,
-    financeForm.gasoline.value,
-    financeForm.autoMaintenance.value,
-    financeForm.parkingAndTolls.value,
-    financeForm.otherTransportCosts.value,
+    parseFloat(financeForm.autoLoan.value),
+    parseFloat(financeForm.autoInsurance.value),
+    parseFloat(financeForm.gasoline.value),
+    parseFloat(financeForm.autoMaintenance.value),
+    parseFloat(financeForm.parkingAndTolls.value),
+    parseFloat(financeForm.otherTransportCosts.value),
     // Other Debt & Loan Payments
-    financeForm.creditCard.value,
-    financeForm.studentLoan.value,
-    financeForm.otherLoansAndLiabilities.value,
+    parseFloat(financeForm.creditCard.value),
+    parseFloat(financeForm.studentLoan.value),
+    parseFloat(financeForm.otherLoansAndLiabilities.value),
     // <h2>Living Expenses</h2>
-    financeForm.groceryBudget.value,
-    financeForm.clothing.value,
-    financeForm.houseSupplies.value,
-    financeForm.mealsOut.value,
-    financeForm.otherLivingExpenses.value,
+    parseFloat(financeForm.groceryBudget.value),
+    parseFloat(financeForm.clothing.value),
+    parseFloat(financeForm.houseSupplies.value),
+    parseFloat(financeForm.mealsOut.value),
+    parseFloat(financeForm.otherLivingExpenses.value),
     // <h2>Healthcare</h2>
-    financeForm.medicalInsurance.value,
-    financeForm.medicalSpending.value,
+    parseFloat(financeForm.medicalInsurance.value),
+    parseFloat(financeForm.medicalSpending.value),
     // <h2>Children & Education</h2>
-    financeForm.childAndPersonalCare.value,
-    financeForm.tuitionAndSupplies.value,
-    financeForm.childSupport.value,
-    financeForm.otherChildSpending.value,
+    parseFloat(financeForm.childAndPersonalCare.value),
+    parseFloat(financeForm.tuitionAndSupplies.value),
+    parseFloat(financeForm.childSupport.value),
+    parseFloat(financeForm.otherChildSpending.value),
     // <h2>Savings & Investments</h2>
-    financeForm._401k.value,
-    financeForm.ira.value,
-    financeForm.rothIra.value,
-    financeForm.collegeSaving.value,
-    financeForm.carSaving.value,
-    financeForm.emergencyFund.value,
+    parseFloat(financeForm._401k.value),
+    parseFloat(financeForm.ira.value),
+    parseFloat(financeForm.rothIra.value),
+    parseFloat(financeForm.collegeSaving.value),
+    parseFloat(financeForm.carSaving.value),
+    parseFloat(financeForm.emergencyFund.value),
     // <h2>Miscelaneous Expenses</h2>
-    financeForm.pet.value,
-    financeForm.gifts.value,
-    financeForm.hobbies.value,
-    financeForm.entertainmentAndTickets.value,
-    financeForm.travelAndVacation.value,
-    financeForm.otherMiscExpenses.value,
+    parseFloat(financeForm.pet.value),
+    parseFloat(financeForm.gifts.value),
+    parseFloat(financeForm.hobbies.value),
+    parseFloat(financeForm.entertainmentAndTickets.value),
+    parseFloat(financeForm.travelAndVacation.value),
+    parseFloat(financeForm.otherMiscExpenses.value),
     0,0,0,0,0,
     0,0,0,0,0,
     0,0,0,0,0,
