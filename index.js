@@ -164,6 +164,7 @@ class FinanceSheet {
     this.calculateSummaryValues();
     this.monthlyProfit = 0;
     this.calculateMonthlyProfit();
+    this.updateOutputValues();
   }
 
   calculateSummaryValues(){
@@ -332,9 +333,30 @@ class FinanceSheet {
     let out = `<p>Money left over: ${this.monthlyProfit.toFixed(2)}</p>`;
     document.querySelector(".out").innerHTML = out;
   }
-  // updateOutputValues(){
-
-  // }
+  updateOutputValues(){
+    // summary
+    document.getElementById("totalBeforeTaxIncome").value = this.totalBeforeTaxIncome;
+    document.getElementById("totalAfterTaxIncome").value = this.totalAfterTaxIncome;
+    document.getElementById("totalExpenses").value = this.totalExpenses;
+    document.getElementById("netDiscretionaryIncome").value = this.netDiscretionaryIncome;
+    document.getElementById("netSavingsAndInvestments").value = this.netSavingsAndInvestments;
+    // daily savings totals
+    document.getElementById("rentAndUtilitiesTransfer").value = this.rentAndUtilitiesTransfer;
+    document.getElementById("carInsuranceAndRepairsTransfer").value = this.carInsuranceAndRepairsTransfer;
+    document.getElementById("carAndSchoolSavingsTransfer").value = this.carAndSchoolSavingsTransfer;
+    document.getElementById("iraTransfer").value = this.iraTransfer;
+    document.getElementById("emergencyFundTransfer").value = this.emergencyFundTransfer;
+    document.getElementById("christmasAndBirthdayGiftsTransfer").value = this.christmasAndBirthdayGiftsTransfer;
+    // expense totals
+    document.getElementById("housingAndUtilities").value = this.housingAndUtilities;
+    document.getElementById("transportation").value = this.transportation;
+    document.getElementById("livingExpenses").value = this.livingExpenses;
+    document.getElementById("debtAndLoanRepayments").value = this.debtAndLoanRepayments;
+    document.getElementById("healthcare").value = this.healthcare;
+    document.getElementById("childrenAndEducation").value = this.childrenAndEducation;
+    document.getElementById("savingsAndInvestments").value = this.savingsAndInvestments;
+    document.getElementById("miscellaneousExpenses").value = this.miscellaneousExpenses;
+  }
 }
 
 class User {
