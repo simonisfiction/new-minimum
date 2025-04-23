@@ -164,9 +164,11 @@ class FinanceSheet {
     this.calculateSummaryValues();
     this.monthlyProfit = 0;
     this.calculateMonthlyProfit();
+    this.calculateDailySavingsTransfers();
     this.updateOutputValues();
+    
   }
-
+  
   calculateSummaryValues(){
     this.totalBeforeTaxIncome = this.income 
                               + this.pensionAndSocialSecurity 
@@ -189,6 +191,14 @@ class FinanceSheet {
                                   + this.rothIra * 12
                                   + this.emergencyFund * 12
   }
+  calculateDailySavingsTransfers(){
+    this.rentAndUtilitiesTransfer = (((this.housingAndUtilities / 12) / 30.5) / 5) * 7;
+    this.carInsuranceAndRepairsTransfer = 7 * (((this.autoInsurance / 12) + (this.autoMaintenance / 12)) /30.5) / 5;
+    this.carAndSchoolSavingsTransfer = 7 * (this.carSaving + (this.collegeSaving / 12)) / 30.5 / 5;
+    this.iraTransfer = 7 * this.rothIra / 30.5 / 5;
+    this.emergencyFundTransfer = 7 * this.emergencyFund / 30.5 / 5;
+    this.christmasAndBirthdayGiftsTransfer = 7 * this.gifts / 365 / 5;
+  } 
   calculateFinalExpenses(){
     this.housingAndUtilities  = this.mortgage * 12
                               + this.propertyTax
