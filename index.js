@@ -160,6 +160,7 @@ class FinanceSheet {
     this.savingsAndInvestments = savingsAndInvestments;
     this.miscellaneousExpenses = miscellaneousExpenses; 
 
+    this.calculateFinalExpenses();
     this.calculateSummaryValues();
     this.monthlyProfit = 0;
     this.calculateMonthlyProfit();
@@ -180,7 +181,9 @@ class FinanceSheet {
                        + this.savingsAndInvestments
                        + this.miscellaneousExpenses;
     this.netDiscretionaryIncome = this.totalAfterTaxIncome - this.totalExpenses;
-    this.netSavingsAndInvestments = this.collegeSaving 
+    this.netSavingsAndInvestments = this._401k * 12
+                                  + this.rothIra
+                                  + this.collegeSaving 
                                   + this.carSaving * 12
                                   + this.rothIra * 12
                                   + this.emergencyFund * 12
@@ -212,7 +215,19 @@ class FinanceSheet {
                               + this.tuitionAndSupplies * 12
                               + this.childSupport * 12
                               + this.otherChildSpending * 12;
-    
+    this.savingsAndInvestments  = this.collegeSaving
+                                + this.rothIra * 12
+                                + this._401k * 12
+                                + this.ira * 12
+                                + this.carSaving * 12
+                                + this.emergencyFund * 12;
+    this.miscellaneousExpenses  = this.pet * 12
+                                + this.gifts
+                                + this.hobbies * 12
+                                + this.entertainmentAndTickets * 12
+                                + this.travelAndVacation
+                                + this.otherMiscExpenses * 12; 
+
   }
 
   printFinanceSheet(){
@@ -317,6 +332,9 @@ class FinanceSheet {
     let out = `<p>Money left over: ${this.monthlyProfit.toFixed(2)}</p>`;
     document.querySelector(".out").innerHTML = out;
   }
+  // updateOutputValues(){
+
+  // }
 }
 
 class User {
