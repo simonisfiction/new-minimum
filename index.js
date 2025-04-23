@@ -185,6 +185,35 @@ class FinanceSheet {
                                   + this.rothIra * 12
                                   + this.emergencyFund * 12
   }
+  calculateFinalExpenses(){
+    this.housingAndUtilities  = this.mortgage * 12
+                              + this.propertyTax
+                              + this.rent * 12
+                              + this.rentalHomeInsurance * 12
+                              + this.hoaCoOp
+                              + this.homeMaintenance * 12
+                              + this.utilities * 12;
+    this.transportation = this.autoLoan * 12
+                        + this.autoInsurance 
+                        + this.gasoline * 12
+                        + this.autoMaintenance
+                        + this.parkingAndTolls * 12
+                        + this.otherTransportCosts * 12;
+    this.livingExpenses = this.groceryBudget * 12
+                        + this.clothing * 12
+                        + this.houseSupplies * 12
+                        + this.mealsOut * 12
+                        + this.otherLivingExpenses * 12;
+    this.debtAndLoanRepayments  = this.creditCard * 12
+                                + this.studentLoan * 12
+                                + this.otherLoansAndLiabilities * 12;
+    this.healthcare = this.medicalInsurance * 12 + this.medicalSpending * 12;
+    this.childrenAndEducation = this.childAndPersonalCare * 12
+                              + this.tuitionAndSupplies * 12
+                              + this.childSupport * 12
+                              + this.otherChildSpending * 12;
+    
+  }
 
   printFinanceSheet(){
     console.log(`\nFINANCES\n`);
