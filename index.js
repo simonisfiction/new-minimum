@@ -163,7 +163,7 @@ class FinanceSheet {
     this.calculateFinalExpenses();
     this.calculateSummaryValues();
     this.monthlyProfit = 0;
-    this.calculateMonthlyProfit();
+    // this.calculateMonthlyProfit();
     this.calculateDailySavingsTransfers();
     this.updateOutputValues();
     
@@ -337,35 +337,35 @@ class FinanceSheet {
     console.log(`| savings and investments      | ${this.savingsAndInvestments}\n`);
     console.log(`| miscellaneous expenses       | ${this.miscellaneousExpenses}\n`);
   }
-  calculateMonthlyProfit(){
-    this.monthlyProfit = parseFloat(this.income) - parseFloat(this.rent) - parseFloat(this.groceryBudget);
+  // calculateMonthlyProfit(){
+  //   this.monthlyProfit = parseFloat(this.income) - parseFloat(this.rent) - parseFloat(this.groceryBudget);
     
-    let out = `<p>Money left over: ${this.monthlyProfit.toFixed(2)}</p>`;
-    document.querySelector(".out").innerHTML = out;
-  }
+  //   let out = `<p>Money left over: ${this.monthlyProfit.toFixed(2)}</p>`;
+  //   document.querySelector(".out").innerHTML = out;
+  // }
   updateOutputValues(){
     // summary
-    document.getElementById("totalBeforeTaxIncome").value = this.totalBeforeTaxIncome;
-    document.getElementById("totalAfterTaxIncome").value = this.totalAfterTaxIncome;
-    document.getElementById("totalExpenses").value = this.totalExpenses;
-    document.getElementById("netDiscretionaryIncome").value = this.netDiscretionaryIncome;
-    document.getElementById("netSavingsAndInvestments").value = this.netSavingsAndInvestments;
+    document.getElementById("totalBeforeTaxIncome").value = `$${this.totalBeforeTaxIncome.toFixed(2)}`;
+    document.getElementById("totalAfterTaxIncome").value = `$${this.totalAfterTaxIncome.toFixed(2)}`;
+    document.getElementById("totalExpenses").value = `$${this.totalExpenses.toFixed(2)}`;
+    document.getElementById("netDiscretionaryIncome").value = `$${this.netDiscretionaryIncome.toFixed(2)}`;
+    document.getElementById("netSavingsAndInvestments").value = `$${this.netSavingsAndInvestments.toFixed(2)}`;
     // daily savings totals
-    document.getElementById("rentAndUtilitiesTransfer").value = this.rentAndUtilitiesTransfer;
-    document.getElementById("carInsuranceAndRepairsTransfer").value = this.carInsuranceAndRepairsTransfer;
-    document.getElementById("carAndSchoolSavingsTransfer").value = this.carAndSchoolSavingsTransfer;
-    document.getElementById("iraTransfer").value = this.iraTransfer;
-    document.getElementById("emergencyFundTransfer").value = this.emergencyFundTransfer;
-    document.getElementById("christmasAndBirthdayGiftsTransfer").value = this.christmasAndBirthdayGiftsTransfer;
+    document.getElementById("rentAndUtilitiesTransfer").value = `$${this.rentAndUtilitiesTransfer.toFixed(2)}`;
+    document.getElementById("carInsuranceAndRepairsTransfer").value = `$${this.carInsuranceAndRepairsTransfer.toFixed(2)}`;
+    document.getElementById("carAndSchoolSavingsTransfer").value = `$${this.carAndSchoolSavingsTransfer.toFixed(2)}`;
+    document.getElementById("iraTransfer").value = `$${this.iraTransfer.toFixed(2)}`;
+    document.getElementById("emergencyFundTransfer").value = `$${this.emergencyFundTransfer.toFixed(2)}`;
+    document.getElementById("christmasAndBirthdayGiftsTransfer").value = `$${this.christmasAndBirthdayGiftsTransfer.toFixed(2)}`;
     // expense totals
-    document.getElementById("housingAndUtilities").value = this.housingAndUtilities;
-    document.getElementById("transportation").value = this.transportation;
-    document.getElementById("livingExpenses").value = this.livingExpenses;
-    document.getElementById("debtAndLoanRepayments").value = this.debtAndLoanRepayments;
-    document.getElementById("healthcare").value = this.healthcare;
-    document.getElementById("childrenAndEducation").value = this.childrenAndEducation;
-    document.getElementById("savingsAndInvestments").value = this.savingsAndInvestments;
-    document.getElementById("miscellaneousExpenses").value = this.miscellaneousExpenses;
+    document.getElementById("housingAndUtilities").value = `$${this.housingAndUtilities.toFixed(2)}`;
+    document.getElementById("transportation").value = `$${this.transportation.toFixed(2)}`;
+    document.getElementById("livingExpenses").value = `$${this.livingExpenses.toFixed(2)}`;
+    document.getElementById("debtAndLoanRepayments").value = `$${this.debtAndLoanRepayments.toFixed(2)}`;
+    document.getElementById("healthcare").value = `$${this.healthcare.toFixed(2)}`;
+    document.getElementById("childrenAndEducation").value = `$${this.childrenAndEducation.toFixed(2)}`;
+    document.getElementById("savingsAndInvestments").value = `$${this.savingsAndInvestments.toFixed(2)}`;
+    document.getElementById("miscellaneousExpenses").value = `$${this.miscellaneousExpenses.toFixed(2)}`;
   }
 }
 
@@ -454,7 +454,7 @@ function getFinanceValues(event){
     0,0,0,0,0,
     0,0,0,0
   )
-  newFinanceSheet.calculateMonthlyProfit();
+  
   newFinanceSheet.printFinanceSheet();
 }
 
