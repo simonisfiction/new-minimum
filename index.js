@@ -468,7 +468,15 @@ function handleSignup(event){
 
 }
 
-document.getElementById("testValues", fillTestValues);
+
+// **********************************************************************
+//        TEST VALUES
+// **********************************************************************
+let testButton = document.getElementById("testValues");
+if(testButton){
+  testButton.addEventListener("click", fillTestValues);
+}
+
 function fillTestValues(event){
   event.preventDefault();
   let testSignupForm = new FinanceSheet(
@@ -492,7 +500,7 @@ function fillTestValues(event){
     // miscelaneous Expenses
     0, 1000, 72, 100, 0, 0
     )
-  document.getElementById("income").value = testSignupForm.income;
+  document.getElementById("i ncome").value = testSignupForm.income;
 }
 
 
