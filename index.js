@@ -337,12 +337,7 @@ class FinanceSheet {
     console.log(`| savings and investments      | ${this.savingsAndInvestments}\n`);
     console.log(`| miscellaneous expenses       | ${this.miscellaneousExpenses}\n`);
   }
-  // calculateMonthlyProfit(){
-  //   this.monthlyProfit = parseFloat(this.income) - parseFloat(this.rent) - parseFloat(this.groceryBudget);
-    
-  //   let out = `<p>Money left over: ${this.monthlyProfit.toFixed(2)}</p>`;
-  //   document.querySelector(".out").innerHTML = out;
-  // }
+
   updateOutputValues(){
     // summary
     document.getElementById("totalBeforeTaxIncome").value = `$${this.totalBeforeTaxIncome.toFixed(2)}`;
@@ -367,7 +362,7 @@ class FinanceSheet {
     document.getElementById("savingsAndInvestments").value = `$${this.savingsAndInvestments.toFixed(2)}`;
     document.getElementById("miscellaneousExpenses").value = `$${this.miscellaneousExpenses.toFixed(2)}`;
   }
-}
+}// end financeeSheet
 
 class User {
   constructor(email, password){
@@ -471,6 +466,33 @@ function handleSignup(event){
   let newUser = new User(signupForm.email, signupForm.password)
   newUser.greet();
 
+}
+
+document.getElementById("testValues", fillTestValues);
+function fillTestValues(event){
+  event.preventDefault();
+  let testSignupForm = new FinanceSheet(
+    // income
+    45769, 0, 0, 0, 6,
+    // expenses
+    // housing and utilities
+    0, 0, 1100, 12, 0, 0, 140,
+    // transportation
+    0, 2000, 200, 2000, 0, 0,
+    // other debt and loan repayments
+    0, 0, 0,
+    // living expenses
+    300, 50, 20, 80, 50,
+    // healthcare
+    89, 0,
+    // children and education
+    0, 0, 0, 0,
+    // savings and investment
+    0, 0, 400, 1200, 100, 100,
+    // miscelaneous Expenses
+    0, 1000, 72, 100, 0, 0
+    )
+  document.getElementById("income").value = testSignupForm.income;
 }
 
 
