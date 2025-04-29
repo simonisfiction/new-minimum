@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Finance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="finance.html">Finance</a></li>
+        <li><a href="login.html">Log In</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h1>Personal Finance Calculator</h1>
+      <p>
+        Personal finance is very simple, but day to day we face a culture that takes advantage of our psychology in order to get us to save less, invest less, and spend more. In the fourth quarter of 2024, the average credit card balance in the united states was $6,580. 
+      </p>
+      <br>
+      <p>
+        One of the keys to avoiding getting into debt is to automate the process of saving money. This calculator will take into account your income and expenses and figure out how much money you have left over to save. To get the ball rolling on saving effectively, set up an automatic transfer from your checking account to a savings account for the amount displayed. The automation of the process of saving takes some friction out of the equation. Typically, people manually transfer money into their savings accounts. It is much easier to set up your savings plan, and then leave it be. 
+      </p>
+    </div>
+    
+
+    <div>
+      <form name="my-form">
+        <!---->
+        <h2>Income Sources (before tax)</h2>
+        <div class="form-group">
+          <label for="income">Yearly income</label>
+          <input type="text" id="income" name="income">
+        </div>
+        <div class="form-group">
+          <label for="pensionAndSocialSecurity">Pension and social security</label>
+          <input type="text" id="pensionAndSocialSecurity" name="pensionAndSocialSecurity">
+        </div>
+        <div class="form-group">
+          <label for="investmentsAndSavings">Investments and savings</label>
+          <input type="text" id="investmentsAndSavings" name="investmentsAndSavings">
+        </div>
+        <div class="form-group">
+          <label for="otherIncome">Other income</label>
+          <input type="text" id="otherIncome" name="otherIncome">
+        </div>
+        <div class="form-group">
+          <label for="incomeTaxRate">Income tax rate</label>
+          <input type="text" id="incomeTaxRate" name="incomeTaxRate">
+        </div>
+
+        <!---->
+        <h2>Expenses</h2>
+        <h3>Housing & Utilities</h3>
+        <div class="form-group">
+          <label for="mortgage">Mortgage</label>
+          <input type="text" id="mortgage" name="mortgage"> 
+        </div>
+        <div class="form-group">
+          <label for="propertyTax">Property tax</label>
+          <input type="text" id="propertyTax" name="propertyTax"> 
+        </div>
+        <div class="form-group">
+          <label for="rent">Rent</label>
+          <input type="text" id="rent" name="rent"> 
+        </div>
+        <div class="form-group">
+          <label for="rentalHomeInsurance">Rental or home insurance</label>
+          <input type="text" id="rentalHomeInsurance" name="rentalHomeInsurance"> 
+        </div>
+        <div class="form-group">
+          <label for="hoaCoOp">HOA / co-op</label>
+          <input type="text" id="hoaCoOp" name="hoaCoOp"> 
+        </div>
+        <div class="form-group">
+          <label for="homeMaintenance">Home maintenance</label>
+          <input type="text" id="homeMaintenance" name="homeMaintenance"> 
+        </div>
+        <div class="form-group">
+          <label for="utilities">Utilities</label>
+          <input type="text" id="utilities" name="utilities"> 
+        </div>
+        <!---->
+        <h2>Transportation</h2>
+        <div class="form-group">
+          <label for="autoLoan">Auto Loan</label>
+          <input type="text" id="autoLoan" name="autoLoan"> 
+        </div>
+        <div class="form-group">
+          <label for="autoInsurance">Auto insurance</label>
+          <input type="text" id="autoInsurance" name="autoInsurance"> 
+        </div>
+        <div class="form-group">
+          <label for="gasoline">Gasoline</label>
+          <input type="text" id="gasoline" name="gasoline"> 
+        </div>
+        <div class="form-group">
+          <label for="autoMaintenance">Auto maintenance</label>
+          <input type="text" id="autoMaintenance" name="autoMaintenance"> 
+        </div>
+        <div class="form-group">
+          <label for="parkingAndTolls">Parking and tolls</label>
+          <input type="text" id="parkingAndTolls" name="parkingAndTolls"> 
+        </div>
+        <div class="form-group">
+          <label for="otherTransportCosts">Other transport costs</label>
+          <input type="text" id="otherTransportCosts" name="otherTransportCosts"> 
+        </div>
+        <!---->
+        <h2>Other Debt & Loan Payments</h2>
+        <div class="form-group">
+          <label for="creditCard">Credit card</label>
+          <input type="text" id="creditCard" name="creditCard"> 
+        </div>
+        <div class="form-group">
+          <label for="studentLoan">Student loan</label>
+          <input type="text" id="studentLoan" name="studentLoan"> 
+        </div>
+        <div class="form-group">
+          <label for="otherLoansAndLiabilities">Other loans and liabilities</label>
+          <input type="text" id="otherLoansAndLiabilities" name="otherLoansAndLiabilities"> 
+        </div>
+        <!---->
+        <h2>Living Expenses</h2>
+        <div class="form-group">
+          <label for="groceryBudget">grocery budget</label>
+          <input type="text" id="groceryBudget" name="groceryBudget">
+        </div>
+        <div class="form-group">
+          <label for="clothing">Clothing</label>
+          <input type="text" id="clothing" name="clothing"> 
+        </div>
+        <div class="form-group">
+          <label for="houseSupplies">Household supplies</label>
+          <input type="text" id="houseSupplies" name="houseSupplies"> 
+        </div>
+        <div class="form-group">
+          <label for="mealsOut">Meals out</label>
+          <input type="text" id="mealsOut" name="mealsOut"> 
+        </div>
+        <div class="form-group">
+          <label for="otherLivingExpenses">Other living expenses</label>
+          <input type="text" id="otherLivingExpenses" name="otherLivingExpenses"> 
+        </div>
+        <!---->
+        <h2>Healthcare</h2>
+        <div class="form-group">
+          <label for="medicalInsurance">medicalInsurance</label>
+          <input type="text" id="medicalInsurance" name="medicalInsurance"> 
+        </div>
+        <div class="form-group">
+          <label for="medicalSpending">medicalSpending</label>
+          <input type="text" id="medicalSpending" name="medicalSpending"> 
+        </div>
+        <!---->
+        <h2>Children & Education</h2>
+        <div class="form-group">
+          <label for="childAndPersonalCare">childAndPersonalCare</label>
+          <input type="text" id="childAndPersonalCare" name="childAndPersonalCare"> 
+        </div>
+        <div class="form-group">
+          <label for="tuitionAndSupplies">tuitionAndSupplies</label>
+          <input type="text" id="tuitionAndSupplies" name="tuitionAndSupplies"> 
+        </div>
+        <div class="form-group">
+          <label for="childSupport">childSupport</label>
+          <input type="text" id="childSupport" name="childSupport"> 
+        </div>
+        <div class="form-group">
+          <label for="otherChildSpending">otherChildSpending</label>
+          <input type="text" id="otherChildSpending" name="otherChildSpending"> 
+        </div>
+        <!---->
+        <h2>Savings & Investments</h2>
+        <div class="form-group">
+          <label for="_401k">401k contributions</label>
+          <input type="text" id="_401k" name="_401k"> 
+        </div>
+        <div class="form-group">
+          <label for="ira">IRA contributions</label>
+          <input type="text" id="ira" name="ira"> 
+        </div>
+        <div class="form-group">
+          <label for="rothIra">Roth IRA contributions</label>
+          <input type="text" id="rothIra" name="rothIra"> 
+        </div>
+        <div class="form-group">
+          <label for="collegeSaving">collegeSaving</label>
+          <input type="text" id="collegeSaving" name="collegeSaving"> 
+        </div>
+        <div class="form-group">
+          <label for="carSaving">Car saving</label>
+          <input type="text" id="carSaving" name="carSaving"> 
+        </div>
+        <div class="form-group">
+          <label for="emergencyFund">Emergency fund</label>
+          <input type="text" id="emergencyFund" name="emergencyFund"> 
+        </div>
+        <!---->
+        <h2>Miscelaneous Expenses</h2>
+        <div class="form-group">
+          <label for="pet">Pet</label>
+          <input type="text" id="pet" name="pet"> 
+        </div>
+        <div class="form-group">
+          <label for="gifts">Gifts</label>
+          <input type="text" id="gifts" name="gifts"> 
+        </div>
+        <div class="form-group">
+          <label for="hobbies">Hobbies</label>
+          <input type="text" id="hobbies" name="hobbies"> 
+        </div>
+        <div class="form-group">
+          <label for="entertainmentAndTickets">Entertainment and tickets</label>
+          <input type="text" id="entertainmentAndTickets" name="entertainmentAndTickets"> 
+        </div>
+        <div class="form-group">
+          <label for="travelAndVacation">Travel and vacation</label>
+          <input type="text" id="travelAndVacation" name="travelAndVacation"> 
+        </div>
+        <div class="form-group">
+          <label for="otherMiscExpenses">Other miscelaneous expenses</label>
+          <input type="text" id="otherMiscExpenses" name="otherMiscExpenses"> 
+        </div>
+        <button type="submit" name="submit">Submit</button>
+        <button type="submit" id="testValues" name="testValues">Test Values</button>
+        <!---->
+        <h2>Summary</h2>
+        <div class="form-group">
+          <label for="totalBeforeTaxIncome">Total Before Tax Income</label>
+          <input type="text" id="totalBeforeTaxIncome" name="totalBeforeTaxIncome"> 
+        </div>
+        <div class="form-group">
+          <label for="totalAfterTaxIncome">Total After Tax Income</label>
+          <input type="text" id="totalAfterTaxIncome" name="totalAfterTaxIncome"> 
+        </div>
+        <div class="form-group">
+          <label for="totalExpenses">Total expenses</label>
+          <input type="text" id="totalExpenses" name="totalExpenses"> 
+        </div>
+        <div class="form-group">
+          <label for="netDiscretionaryIncome">Net Discretionary Income</label>
+          <input type="text" id="netDiscretionaryIncome" name="netDiscretionaryIncome"> 
+        </div>
+        <div class="form-group">
+          <label for="netSavingsAndInvestments">Net Savings and investments</label>
+          <input type="text" id="netSavingsAndInvestments" name="netSavingsAndInvestments"> 
+        </div>
+        <!---->
+        <h2>Daily Savings Tansfers</h2>
+        <div class="form-group">
+          <label for="rentAndUtilitiesTransfer">Rent & Utilities</label>
+          <input type="text" id="rentAndUtilitiesTransfer" name="rentAndUtilitiesTransfer"> 
+        </div>
+        <div class="form-group">
+          <label for="carInsuranceAndRepairsTransfer">Car Insurance & Repairs</label>
+          <input type="text" id="carInsuranceAndRepairsTransfer" name="carInsuranceAndRepairsTransfer"> 
+        </div>
+        <div class="form-group">
+          <label for="carAndSchoolSavingsTransfer">Car & School Savings</label>
+          <input type="text" id="carAndSchoolSavingsTransfer" name="carAndSchoolSavingsTransfer"> 
+        </div>
+        <div class="form-group">
+          <label for="iraTransfer">IRA</label>
+          <input type="text" id="iraTransfer" name="iriraTransfera"> 
+        </div>
+        <div class="form-group">
+          <label for="emergencyFundTransfer">Emergency Fund</label>
+          <input type="text" id="emergencyFundTransfer" name="emergencyFundTransfer"> 
+        </div>
+        <div class="form-group">
+          <label for="christmasAndBirthdayGiftsTransfer">Christmas & B-day gifts</label>
+          <input type="text" id="christmasAndBirthdayGiftsTransfer" name="christmasAndBirthdayGiftsTransfer"> 
+        </div>
+        <!---->
+        <h2>Expense Totals</h2>
+        <div class="form-group">
+          <label for="housingAndUtilities">Housing & Utilities</label>
+          <input type="text" id="housingAndUtilities" name="housingAndUtilities"> 
+        </div>
+        <div class="form-group">
+          <label for="transportation">Transportation</label>
+          <input type="text" id="transportation" name="transportation"> 
+        </div>
+        <div class="form-group">
+          <label for="livingExpenses">Living Expenses</label>
+          <input type="text" id="livingExpenses" name="livingExpenses"> 
+        </div>
+        <div class="form-group">
+          <label for="debtAndLoanRepayments">Debt & Loan Repayments</label>
+          <input type="text" id="debtAndLoanRepayments" name="debtAndLoanRepayments"> 
+        </div>
+        <div class="form-group">
+          <label for="healthcare">Healthcare</label>
+          <input type="text" id="healthcare" name="healthcare"> 
+        </div>
+        <div class="form-group">
+          <label for="childrenAndEducation">Children & Education</label>
+          <input type="text" id="childrenAndEducation" name="childrenAndEducation"> 
+        </div>
+        <div class="form-group">
+          <label for="savingsAndInvestments">Savings & Investments</label>
+          <input type="text" id="savingsAndInvestments" name="savingsAndInvestments"> 
+        </div>
+        <div class="form-group">
+          <label for="miscellaneousExpenses">Miscellaneous Expenses</label>
+          <input type="text" id="miscellaneousExpenses" name="miscellaneousExpenses"> 
+        </div>
+        
+
+
+        
+        
+      </form>
+      <div class="out">
+          <p>Money left over: </p>
+      </div>
+    </div>
+    <script src="index.js" charset="utf-8"></script>
+    <script src="finance.js" charset="utf-8"></script>
+  </body>
+</html>
